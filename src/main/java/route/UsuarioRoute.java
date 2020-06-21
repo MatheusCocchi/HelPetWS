@@ -1,5 +1,6 @@
 package route;
 
+//import com.google.gson.Gson;
 import com.google.gson.Gson;
 import dao.Connect;
 import dao.UsuarioDAO;
@@ -10,7 +11,11 @@ import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
 
-@Path("usuarios")
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+@Path("users")
 public class UsuarioRoute {
     @Path("/login")
     @GET
@@ -25,11 +30,12 @@ public class UsuarioRoute {
         if (usuario != null) {
             Gson gson = new Gson();
             return gson.toJson(usuario);
+//            return "OK - " + usuario.getNome();
         } else
             return "{\"success\":false}";
     }
 
-    @Path("/novo")
+    @Path("/inUser")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String novoUsuario(@QueryParam("jUsuario") String jUser) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
@@ -46,7 +52,7 @@ public class UsuarioRoute {
         }
     }
 
-    @Path("/atualizar")
+    @Path("/upUser")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String atualizarUsuario(@QueryParam("jUsuario") String jUser) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {

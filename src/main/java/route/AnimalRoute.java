@@ -1,20 +1,23 @@
 package route;
 
+//import com.google.gson.Gson;
 import com.google.gson.Gson;
 import dao.AnimalDAO;
 import dao.Connect;
-import dao.UsuarioDAO;
 import model.Animal;
-import model.Usuario;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
 
-@Path("animais")
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+@Path("animal")
 public class AnimalRoute {
-    @Path("/novo")
+    @Path("/inAnimal")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String novoAnimal(@QueryParam("jAnimal") String jAnimal) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
@@ -31,7 +34,7 @@ public class AnimalRoute {
         }
     }
 
-    @Path("/atualizar")
+    @Path("/upAnimal")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String atualizarAnimal(@QueryParam("jAnimal") String jAnimal) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
