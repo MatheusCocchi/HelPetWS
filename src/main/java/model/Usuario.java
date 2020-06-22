@@ -19,7 +19,7 @@ public class Usuario {
     private String sexo;
     private int idade;
     private String tipo;
-    private Date datacad;
+    private String datacad;
     private int status;
 
     public long getCodigo() {
@@ -126,11 +126,11 @@ public class Usuario {
         this.tipo = tipo;
     }
 
-    public Date getDatacad() {
+    public String getDatacad() {
         return datacad;
     }
 
-    public void setDatacad(Date datacad) {
+    public void setDatacad(String datacad) {
         this.datacad = datacad;
     }
 

@@ -5,11 +5,14 @@ import com.google.gson.Gson;
 import dao.Connect;
 import dao.UsuarioDAO;
 import model.Usuario;
+import sun.rmi.runtime.Log;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -32,7 +35,8 @@ public class UsuarioRoute {
             return gson.toJson(usuario);
 //            return "OK - " + usuario.getNome();
         } else
-            return "{\"success\":false}";
+            return "Erro de validação";
+//            return "{\"success\":false}";
     }
 
     @Path("/inUser")
@@ -44,6 +48,10 @@ public class UsuarioRoute {
         UsuarioDAO usuarioDAO = new UsuarioDAO(con.createConnection());
 
         Gson gson = new Gson();
+
+        Logger lgr = Logger.getLogger(Connect.class.getName());
+        lgr.log(Level.SEVERE, "COCCHI - " + jUser, "MATHEUS");
+
         Usuario u = gson.fromJson(jUser, Usuario.class);
         if (usuarioDAO.inserirUsuario(u)) {
             return "{\"success\":true}";

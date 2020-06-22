@@ -34,7 +34,7 @@ public class UsuarioDAO {
             preparedStatement.setString(10, user.getSexo());
             preparedStatement.setInt(11, user.getIdade());
             preparedStatement.setString(12, user.getTipo());
-            preparedStatement.setDate(13, user.getDatacad());
+            preparedStatement.setString(13, user.getDatacad());
             preparedStatement.setInt(14, user.getStatus());
             preparedStatement.execute();
             return true;
@@ -64,7 +64,7 @@ public class UsuarioDAO {
             preparedStatement.setString(10, user.getSexo());
             preparedStatement.setInt(11, user.getIdade());
             preparedStatement.setString(12, user.getTipo());
-            preparedStatement.setDate(13, user.getDatacad());
+            preparedStatement.setString(13, user.getDatacad());
             preparedStatement.setInt(14, user.getStatus());
             preparedStatement.setLong(15, user.getCodigo());
             preparedStatement.executeUpdate();
@@ -102,7 +102,7 @@ public class UsuarioDAO {
                 user.setSexo(rs.getString(11));
                 user.setIdade(rs.getInt(12));
                 user.setTipo(rs.getString(13));
-                user.setDatacad(rs.getDate(14));
+                user.setDatacad(rs.getString(14));
                 user.setStatus(rs.getInt(15));
             }
         } catch (SQLException ex) {
@@ -136,7 +136,7 @@ public class UsuarioDAO {
                 user.setSexo(rs.getString(11));
                 user.setIdade(rs.getInt(12));
                 user.setTipo(rs.getString(13));
-                user.setDatacad(rs.getDate(14));
+                user.setDatacad(rs.getString(14));
                 user.setStatus(rs.getInt(15));
                 users.add(user);
             }
@@ -171,7 +171,7 @@ public class UsuarioDAO {
                 user.setSexo(rs.getString(11));
                 user.setIdade(rs.getInt(12));
                 user.setTipo(rs.getString(13));
-                user.setDatacad(rs.getDate(14));
+                user.setDatacad(rs.getString(14));
                 user.setStatus(rs.getInt(15));
                 users.add(user);
             }

@@ -38,7 +38,7 @@ public class AnimalDAO {
             preparedStatement.setString(14, animal.getLatitude());
             preparedStatement.setString(15, animal.getLongitude());
             preparedStatement.setInt(16, animal.getStatus());
-            preparedStatement.setDate(17, animal.getDatacad());
+            preparedStatement.setString(17, animal.getDatacad());
             preparedStatement.setString(18, animal.getTipo());
             preparedStatement.setLong(19, animal.getCodusuario().getCodigo());
             preparedStatement.execute();
@@ -73,7 +73,7 @@ public class AnimalDAO {
             preparedStatement.setString(14, animal.getLatitude());
             preparedStatement.setString(15, animal.getLongitude());
             preparedStatement.setInt(16, animal.getStatus());
-            preparedStatement.setDate(17, animal.getDatacad());
+            preparedStatement.setString(17, animal.getDatacad());
             preparedStatement.setString(18, animal.getTipo());
             preparedStatement.setLong(19, animal.getCodusuario().getCodigo());
             preparedStatement.setLong(20, animal.getCodigo());
@@ -118,7 +118,7 @@ public class AnimalDAO {
                 animal.setLatitude(rs.getString("a.latitude"));
                 animal.setLongitude(rs.getString("a.longitude"));
                 animal.setStatus(rs.getInt("a.status"));
-                animal.setDatacad(rs.getDate("a.datacad"));
+                animal.setDatacad(rs.getString("a.datacad"));
                 animal.setTipo(rs.getString("a.tipo"));
 
                 Usuario user = new Usuario();
@@ -135,7 +135,7 @@ public class AnimalDAO {
                 user.setSexo(rs.getString("u.sexo"));
                 user.setIdade(rs.getInt("u.idade"));
                 user.setTipo(rs.getString("u.tipo"));
-                user.setDatacad(rs.getDate("u.datacad"));
+                user.setDatacad(rs.getString("u.datacad"));
                 user.setStatus(rs.getInt("u.status"));
 
                 animal.setCodusuario(user);
@@ -180,7 +180,7 @@ public class AnimalDAO {
                 animal.setLatitude(rs.getString("a.latitude"));
                 animal.setLongitude(rs.getString("a.longitude"));
                 animal.setStatus(rs.getInt("a.status"));
-                animal.setDatacad(rs.getDate("a.datacad"));
+                animal.setDatacad(rs.getString("a.datacad"));
                 animal.setTipo(rs.getString("a.tipo"));
 
                 Usuario user = new Usuario();
@@ -197,7 +197,7 @@ public class AnimalDAO {
                 user.setSexo(rs.getString("u.sexo"));
                 user.setIdade(rs.getInt("u.idade"));
                 user.setTipo(rs.getString("u.tipo"));
-                user.setDatacad(rs.getDate("u.datacad"));
+                user.setDatacad(rs.getString("u.datacad"));
                 user.setStatus(rs.getInt("u.status"));
 
                 animal.setCodusuario(user);

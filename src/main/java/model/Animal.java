@@ -24,7 +24,7 @@ public class Animal {
     private String latitude;
     private String longitude;
     private int status;
-    private Date datacad;
+    private String datacad;
     private String tipo;
     private Usuario codusuario;
 
@@ -164,11 +164,11 @@ public class Animal {
         this.status = status;
     }
 
-    public Date getDatacad() {
+    public String getDatacad() {
         return datacad;
     }
 
-    public void setDatacad(Date datacad) {
+    public void setDatacad(String datacad) {
         this.datacad = datacad;
     }
 
